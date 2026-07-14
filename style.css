@@ -1,172 +1,147 @@
-/* ==========================================================================
-   TENDÊNCIA MODERNA: GLASSMORPHISM & SOFT NEON (PALETA VERDE)
-   ========================================================================== */
-
-/* Importação de uma fonte mais moderna e limpa */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
+/* Configurações Gerais - Tema Roxo */
 body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    /* Fundo escuro profundo com degradê radial para destacar o efeito neon do centro */
-    background: radial-gradient(circle at center, #0b1a14 0%, #050b08 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #5c3d98; /* Cor de fundo alterada para um roxo moderno */
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    overflow: hidden;
-    position: relative;
+    height: 100vh;
+    margin: 0;
 }
 
-/* Efeito Areal/Background dinâmico: Orbes de luz neon desfocadas ao fundo */
-body::before, body::after {
-    content: '';
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background: rgba(0, 255, 136, 0.15);
-    filter: blur(80px);
-    z-index: 0;
-}
-body::before { top: 15%; left: 20%; }
-body::after { bottom: 15%; right: 20%; background: rgba(52, 211, 153, 0.1); }
-
-/* Caixa Principal (Container) com efeito Glassmorphism (Vidro Jateado) */
+/* Caixa Principal */
 .container {
-    position: relative;
-    z-index: 1;
-    background: rgba(15, 28, 23, 0.65); /* Fundo semi-transparente escuro */
-    backdrop-filter: blur(16px); /* O efeito areal de desfoque do vidro */
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.08); /* Borda fina simulando reflexo do vidro */
-    padding: 40px 35px;
-    border-radius: 24px; /* Cantos arredondados modernos */
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     width: 100%;
-    max-width: 420px;
-    /* Sombra projetada suave e profunda */
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    max-width: 400px;
 }
 
 h2 {
     text-align: center;
-    color: #ffffff;
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 30px;
-    letter-spacing: -0.5px;
+    color: #333;
+    margin-bottom: 20px;
 }
 
 /* Campos do Formulário */
 .campo {
-    margin-bottom: 22px;
+    margin-bottom: 15px;
 }
 
 label {
     display: block;
-    margin-bottom: 8px;
-    color: #a3b8cc; /* Texto secundário sutil */
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
+    margin-bottom: 5px;
+    color: #666;
+    font-weight: 600;
 }
 
 input {
     width: 100%;
-    padding: 14px 16px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    color: #ffffff;
-    font-size: 15px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
 }
 
-/* Efeito de Foco com leve brilho Neon Verde */
 input:focus {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: #00ff88;
+    border-color: #007BFF;
     outline: none;
-    box-shadow: 0 0 15px rgba(0, 255, 136, 0.25);
 }
 
-/* Placeholder discreto */
-input::placeholder {
-    color: rgba(255, 255, 255, 0.3);
-}
-
-/* Botão Moderno com Brilho Neon Inteligente */
+/* Botão Principal */
 button {
     width: 100%;
-    padding: 15px;
-    background: linear-gradient(135deg, #00ff88 0%, #00b359 100%);
-    color: #050b08;
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
     border: none;
-    border-radius: 12px;
+    border-radius: 4px;
     font-size: 16px;
-    font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
-    /* Sombra sutil que imita neon físico */
-    box-shadow: 0 4px 20px rgba(0, 255, 136, 0.3);
+    font-weight: bold;
+    transition: background 0.3s;
 }
 
 button:hover {
-    transform: translateY(-2px); /* Leve flutuação ao passar o mouse */
-    box-shadow: 0 6px 25px rgba(0, 255, 136, 0.5); /* Intensifica o neon */
+    background-color: #0056b3;
 }
 
-button:active {
-    transform: translateY(1px);
+/* ==========================================================================
+   ESTILIZAÇÃO DO POPUP (MODAL)
+   ========================================================================== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6); /* Escurece um pouco mais o fundo ao abrir o modal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
 }
 
-/* Área de Resultado Estilizada (Mensagens) */
-.resultado {
-    margin-top: 25px;
-    padding: 18px;
-    border-radius: 14px;
+.modal-overlay:not(.oculto) {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 380px;
+    width: 90%;
     text-align: center;
-    font-weight: 500;
-    font-size: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay:not(.oculto) .modal-content {
+    transform: scale(1);
+}
+
+#resultadoTexto {
+    font-size: 16px;
+    font-weight: 600;
     line-height: 1.5;
-    animation: fadeIn 0.4s ease forwards;
+    margin-bottom: 20px;
 }
 
-/* Sucesso: Verde Neon Esmeralda */
-.sucesso {
-    background: rgba(0, 255, 136, 0.1);
-    color: #00ff88;
-    border: 1px solid rgba(0, 255, 136, 0.2);
-    box-shadow: 0 0 15px rgba(0, 255, 136, 0.1);
+/* Classes de Cores do Resultado */
+.texto-sucesso {
+    color: #28a745;
 }
 
-/* Erro: Coral/Vermelho elegante para contraste sem quebrar a harmonia rev1 */ 
-.erro {
-    background: rgba(255, 75, 75, 0.1);
-    color: #ff4b4b;
-    border: 1px solid rgba(255, 75, 75, 0.2);
-    box-shadow: 0 0 15px rgba(255, 75, 75, 0.1);
+.texto-erro {
+    color: #dc3545;
+}
+
+/* Botão de fechar do popup */
+#btnFecharModal {
+    background-color: #6c757d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    width: auto;
+    display: inline-block;
+}
+
+#btnFecharModal:hover {
+    background-color: #5a6268;
 }
 
 .oculto {
-    display: none;
-}
-
-/* Animação suave para quando o resultado aparecer */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    display: none !important;
 }
