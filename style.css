@@ -1,0 +1,172 @@
+/* ==========================================================================
+   TENDÊNCIA MODERNA: GLASSMORPHISM & SOFT NEON (PALETA VERDE)
+   ========================================================================== */
+
+/* Importação de uma fonte mais moderna e limpa */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    /* Fundo escuro profundo com degradê radial para destacar o efeito neon do centro */
+    background: radial-gradient(circle at center, #0b1a14 0%, #050b08 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Efeito Areal/Background dinâmico: Orbes de luz neon desfocadas ao fundo */
+body::before, body::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(0, 255, 136, 0.15);
+    filter: blur(80px);
+    z-index: 0;
+}
+body::before { top: 15%; left: 20%; }
+body::after { bottom: 15%; right: 20%; background: rgba(52, 211, 153, 0.1); }
+
+/* Caixa Principal (Container) com efeito Glassmorphism (Vidro Jateado) */
+.container {
+    position: relative;
+    z-index: 1;
+    background: rgba(15, 28, 23, 0.65); /* Fundo semi-transparente escuro */
+    backdrop-filter: blur(16px); /* O efeito areal de desfoque do vidro */
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08); /* Borda fina simulando reflexo do vidro */
+    padding: 40px 35px;
+    border-radius: 24px; /* Cantos arredondados modernos */
+    width: 100%;
+    max-width: 420px;
+    /* Sombra projetada suave e profunda */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    letter-spacing: -0.5px;
+}
+
+/* Campos do Formulário */
+.campo {
+    margin-bottom: 22px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #a3b8cc; /* Texto secundário sutil */
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+input {
+    width: 100%;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 15px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Efeito de Foco com leve brilho Neon Verde */
+input:focus {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: #00ff88;
+    outline: none;
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.25);
+}
+
+/* Placeholder discreto */
+input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Botão Moderno com Brilho Neon Inteligente */
+button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #00ff88 0%, #00b359 100%);
+    color: #050b08;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* Sombra sutil que imita neon físico */
+    box-shadow: 0 4px 20px rgba(0, 255, 136, 0.3);
+}
+
+button:hover {
+    transform: translateY(-2px); /* Leve flutuação ao passar o mouse */
+    box-shadow: 0 6px 25px rgba(0, 255, 136, 0.5); /* Intensifica o neon */
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Área de Resultado Estilizada (Mensagens) */
+.resultado {
+    margin-top: 25px;
+    padding: 18px;
+    border-radius: 14px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.5;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+/* Sucesso: Verde Neon Esmeralda */
+.sucesso {
+    background: rgba(0, 255, 136, 0.1);
+    color: #00ff88;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.1);
+}
+
+/* Erro: Coral/Vermelho elegante para contraste sem quebrar a harmonia */
+.erro {
+    background: rgba(255, 75, 75, 0.1);
+    color: #ff4b4b;
+    border: 1px solid rgba(255, 75, 75, 0.2);
+    box-shadow: 0 0 15px rgba(255, 75, 75, 0.1);
+}
+
+.oculto {
+    display: none;
+}
+
+/* Animação suave para quando o resultado aparecer */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
