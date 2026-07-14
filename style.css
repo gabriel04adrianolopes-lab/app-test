@@ -147,7 +147,7 @@ button:active {
     box-shadow: 0 0 15px rgba(0, 255, 136, 0.1);
 }
 
-/* Erro: Coral/Vermelho elegante para contraste sem quebrar a harmonia */
+/* Erro: Coral/Vermelho elegante para contraste sem quebrar a harmonia rev1 */ 
 .erro {
     background: rgba(255, 75, 75, 0.1);
     color: #ff4b4b;

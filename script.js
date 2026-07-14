@@ -7,7 +7,7 @@ formulario.addEventListener('submit', function(event) {
     // Impede a página de recarregar ao enviar o formulário
     event.preventDefault();
 
-    // Captura os valores digitados e converte para os tipos corretos
+    // Captura os valores digitados e converte para os tipos corretos rev1
     const nome = document.getElementById('nome').value;
     const idade = parseInt(document.getElementById('idade').value);
     const altura = parseFloat(document.getElementById('altura').value);
